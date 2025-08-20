@@ -1,0 +1,174 @@
+/* overallsection_css.css */
+
+/* General Styling */
+.overall-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #3498db, #2ecc71);
+  border-radius: 2px;
+}
+
+/* Sessions Grid Layout */
+.sessions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* Session Card Styling */
+.session-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.session-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.session-date {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.session-category {
+  padding: 15px 20px 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #7f8c8d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-category.career {
+  color: #3498db;
+}
+
+.session-title {
+  padding: 0 20px;
+  margin: 0 0 15px;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  line-height: 1.4;
+}
+
+/* Image Styling */
+.image-holder {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.image-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.session-card:hover .image-holder img {
+  transform: scale(1.05);
+}
+
+/* Button Styling */
+.view-more {
+  display: block;
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 12px;
+  background: linear-gradient(to right, #3498db, #2ecc71);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-more:hover {
+  background: linear-gradient(to right, #2980b9, #27ae60);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.view-more-section {
+  display: block;
+  margin: 40px auto 0;
+  padding: 14px 30px;
+  background: #34495e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-width: 200px;
+  text-align: center;
+}
+
+.view-more-section:hover {
+  background: #2c3e50;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sessions {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .overall-section {
+    padding: 40px 15px;
+  }
+  
+  .sessions {
+    grid-template-columns: 1fr;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+  }
+}
